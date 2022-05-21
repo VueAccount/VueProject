@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    
-    <!-- HelloWorld msg="Welcome to Your Vue.js App"/ -->
-    <EditScreen/>
+    <Tab/>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
-import EditScreen from './components/EditScreen.vue'
+import Tab from './components/Tab.vue'
+
 
 export default {
   name: 'App',
   components: {
-    //HelloWorld,
-    EditScreen
+    Tab
   }
 }
 </script>
