@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="title">
-    <h1>{{ title }}</h1>
     </div>
 
     <div class="searchbox">
+      <br>
       <label class="label" name="storeSearch">店名を入力してください</label>
       <input type="text" name="name" size="25 ">
       <button class="searchbutton" role="button">検索</button>

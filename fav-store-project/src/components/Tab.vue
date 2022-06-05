@@ -7,60 +7,70 @@
         <button @click="tabChange(1)">一覧</button>
       </li>
       <li :class="{ active: activeTab == 2 }">
-        <button @click="tabChange(2)">編集(変更・修正)</button>
+        <button @click="tabChange(2)">検索</button>
       </li>
       <li :class="{ active: activeTab == 3 }">
-        <button @click="tabChange(3)">検索</button>
+        <button @click="tabChange(3)">設定</button>
       </li>
       <li :class="{ active: activeTab == 4 }">
-        <button @click="tabChange(4)">設定</button>
-      </li>
-      <li :class="{ active: activeTab == 5 }">
-        <button @click="tabChange(5)">マイページ</button>
+        <button @click="tabChange(4)">マイページ</button>
       </li>
     </ul>
     <div class="tab-body">
       <div v-if="activeTab == 1">
-        <div class="tab1">TABコンテンツ1</div>
+        <div class="tab1">店舗一覧(基本情報)</div>
+        <div class = "button">
+          <button v-on:click="openModal(item)" class="test">モダールテスト</button>
+        </div>
+        <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
       </div>
       <div v-else-if="activeTab == 2">
-        <div class="tab2">TABコンテンツ2</div>
-        <Edition/>
+        <div class="tab2">店舗検索</div>
+        <Search/>
       </div>
       <div v-else-if="activeTab == 3">
         <div class="tab3">TABコンテンツ3</div>
-        <Search/>
       </div>
       <div v-else-if="activeTab == 4">
         <div class="tab4">TABコンテンツ4</div>
-      </div>
-      <div v-else-if="activeTab == 5">
-        <div class="tab5">TABコンテンツ5</div>
+        <EditScreen/>
       </div>
     </div>
-   </v-container>
+    </v-container>
   </v-app>
 </div>
 </template>
 
 <script>
-import Edition from './EditScreen.vue'
 import Search from './StoreSearch.vue'
+import ModalWind from './ModalWind.vue'
+import EditScreen from './EditScreen.vue'
 
 export default {
     name: 'Tab-con',
-    components:{
-      Edition,
+    components: {
       Search,
+      ModalWind,
+      EditScreen,
     },
     data(){
         return {
             activeTab: 1,
+            showContent: false,
+            postItem: "",
+            item: true,
         }
     },
     methods: {
         tabChange(id) {
         this.activeTab = id
+        },
+        openModal (item) {
+          this.showContent =true
+          this.postItem = item
+        },
+        closeModal () {
+          this.showContent = false
         }
     }
 }
@@ -73,17 +83,17 @@ export default {
   list-style: none;
   margin-left: 50px;
   margin-right: 50px;
-
+  width: 1000px;
 }
 .tab-head li {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 3px solid #ccc;
   width: calc(100% / 3);
 }
 .tab-head li:hover {
   background: #f5f5f5;
 }
 .tab-head li.active {
-  border-bottom: 2px solid #1867c0;
+  border-bottom: 3px solid #1867c0;
   background: #ebf4ff;
 }
 .tab-head li button {
@@ -91,13 +101,16 @@ export default {
   width: 100%;
 }
 .tab-body {
-  padding: 16px;  
+  padding: 20px;  
 }
 .tab1,
 .tab2,
-.tab3 {
+.tab3,
+.tab4 {
   padding: 12px;
   color: #fff;
+  width: 800px;
+  margin-left: 25px;
 }
 .tab1 {
   background: #1867c0;
@@ -111,7 +124,8 @@ export default {
 .tab4 {
   background: yellow;
 }
-.tab5 {
-  background: orange;
+.test {
+  border: solid;
+  margin-top: 50px;
 }
 </style>
