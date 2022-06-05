@@ -21,6 +21,7 @@
           <button v-on:click="openModal(item)" class="test">モダールテスト</button>
         </div>
         <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
+        
       </div>
       <div v-else-if="activeTab == 2">
         <div class="tab2">店舗検索</div>

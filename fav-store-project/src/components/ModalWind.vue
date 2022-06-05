@@ -7,6 +7,7 @@
       <li v-for="(item, index) in data" :key="index">
         {{index}} {{ item }}
       </li>
+      <div><StoreList/></div>
       <div class="close">
         <button v-on:click="$emit('close')">Close</button>
       </div>
@@ -15,6 +16,8 @@
 </template>
 
 <script>
+import StoreList from './StoreList.vue'
+
 export default {
   name: 'ModalWind',
   props: ['val'],
@@ -23,6 +26,9 @@ export default {
       title: "これがモーダルウィンドウです。",
       data: ["りんご", "バナナ", "ぶどう"]
     }
+  },
+  components: {
+      StoreList,
   }
 }
 </script>
