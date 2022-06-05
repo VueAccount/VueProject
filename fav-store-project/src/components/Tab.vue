@@ -1,7 +1,5 @@
 <template>
 <div id="app">
-  <v-app>
-    <v-container>
     <ul class="tab-head">
       <li :class="{ active: activeTab == 1 }">
         <button @click="tabChange(1)">一覧</button>
@@ -36,8 +34,6 @@
         <EditScreen/>
       </div>
     </div>
-    </v-container>
-  </v-app>
 </div>
 </template>
 
@@ -47,7 +43,7 @@ import ModalWind from './ModalWind.vue'
 import EditScreen from './EditScreen.vue'
 
 export default {
-    name: 'Tab-con',
+    name: 'TabComponent',
     components: {
       Search,
       ModalWind,
