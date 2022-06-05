@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <Tab/>
+    <StoreList/>
   </div>
 </template>
 
 <script>
 import Tab from './components/Tab.vue'
-
+import StoreList from './components/StoreList'
 
 export default {
   name: 'App',
   components: {
-    Tab
+    Tab,
+    StoreList,
+
+
   }
 }
 </script>

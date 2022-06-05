@@ -1,7 +1,5 @@
 <template>
 <div id="app">
-  <v-app>
-    <v-container>
     <ul class="tab-head">
       <li :class="{ active: activeTab == 1 }">
         <button @click="tabChange(1)">一覧</button>
@@ -38,8 +36,6 @@
         <div class="tab5">TABコンテンツ5</div>
       </div>
     </div>
-   </v-container>
-  </v-app>
 </div>
 </template>
 
