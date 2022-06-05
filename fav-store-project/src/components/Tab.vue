@@ -20,6 +20,7 @@
     <div class="tab-body">
       <div v-if="activeTab == 1">
         <div class="tab1">TABコンテンツ1</div>
+        <StoreList/>
       </div>
       <div v-else-if="activeTab == 2">
         <div class="tab2">TABコンテンツ2</div>
@@ -42,12 +43,14 @@
 <script>
 import Edition from './EditScreen.vue'
 import Search from './StoreSearch.vue'
+import StoreList from './StoreList.vue'
 
 export default {
     name: 'Tab-con',
     components:{
       Edition,
       Search,
+      StoreList,
     },
     data(){
         return {
