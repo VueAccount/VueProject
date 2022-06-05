@@ -3,7 +3,6 @@
   <div id="app">
     <!--<Tab/>-->
     <Tab/>
-    <StoreList/>
   </div>
 </body>
 </template>
