@@ -1,9 +1,13 @@
 <template>
-<body>
-  <div id="app">
-    <Tab/>
-  </div>
-</body>
+<v-app>
+  <v-container>
+    <body>
+      <div id="app">
+        <Tab/>
+      </div>
+    </body>
+  </v-container>
+</v-app>
 </template>
 
 <script>
@@ -12,7 +16,7 @@ import Tab from './components/Tab.vue'
 export default {
   name: 'App',
   components: {
-      Tab,
+    Tab,
   }
 }
 </script>
