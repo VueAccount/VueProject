@@ -17,11 +17,7 @@
     <div class="tab-body">
       <div v-if="activeTab == 1">
         <div class="tab1">店舗一覧(基本情報)</div>
-        <div class = "button">
-          <button v-on:click="openModal(item)" class="test">モダールテスト</button>
-        </div>
-        <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
-        
+        <StoreList/>
       </div>
       <div v-else-if="activeTab == 2">
         <div class="tab2">店舗検索</div>
@@ -40,35 +36,22 @@
 
 <script>
 import Search from './StoreSearch.vue'
-import ModalWind from './ModalWind.vue'
 import EditScreen from './EditScreen.vue'
+import StoreList from './StoreList.vue'
 
 export default {
     name: 'TabComponent',
     components: {
       Search,
-      ModalWind,
       EditScreen,
+      StoreList,
     },
     data(){
         return {
             activeTab: 1,
-            showContent: false,
-            postItem: "",
-            item: true,
         }
     },
     methods: {
-        tabChange(id) {
-        this.activeTab = id
-        },
-        openModal (item) {
-          this.showContent =true
-          this.postItem = item
-        },
-        closeModal () {
-          this.showContent = false
-        }
     }
 }
 </script>
