@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <div class="title">
       <h1>{{ title }}</h1>
     </div>
@@ -53,9 +53,17 @@ export default {
 </script>
 
 <style scoped>
-.title{
-  margin-left: 50px;
+#main{
+    min-height: 500px;
 }
+.title{
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  padding:  20px 0px;
+}
+
+
 .item{
   display: block;
   overflow: hidden;
@@ -84,5 +92,6 @@ export default {
   margin-left: 100px;
   width: 195px;
 }
+
 
 </style>

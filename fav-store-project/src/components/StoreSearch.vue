@@ -1,16 +1,28 @@
 <template>
   <div>
     <div class="title">
-    </div>
+      <div class="searchbox">
+        <br>
+        <label class="label" name="storeSearch">店舗検索</label>
+          <v-row>
+            <v-col cols="6">
+              <v-text-field v-model="message" class="search_box"
+                            label="検索キーワードを入力してください" 
+                            type="text"
+                            color="green darken-5"
+                            clearable
+                            maxlength="20">
+                  <template v-slot:append-outer>
+                    <v-btn color="primary"><v-icon>mdi-magnify</v-icon></v-btn>
+                  </template>
+              </v-text-field>
 
-    <div class="searchbox">
-      <br>
-      <label class="label" name="storeSearch">店名を入力してください</label>
-      <input type="text" name="name" size="25 ">
-      <button class="searchbutton" role="button">検索</button>
-    </div>
-    <div class= "map">
-      <label class="label">Googleマップ(予定)</label>
+            </v-col>
+          </v-row>
+      </div>
+      <div class= "map">
+        <label>Googleマップ配置(予定)</label>
+      </div>
     </div>
   </div>
 </template>
@@ -27,23 +39,22 @@ export default{
 </script>
 
 <style>
+.searchbox {
+  margin-left: 20px;
+ }
 .searchbox .label {
   display: block;
   overflow: hidden;
-  margin-bottom: 10px;
-  margin-left: 20px;
-}
-.searchbox input[type=text]{
-  margin-left: 25px;
-}
-.searchbox .searchbutton{
-  margin-left: 5px;
+  margin-bottom: 30px;
+  font-size: 30px;
 }
 .map {
   border: solid;
   margin-top: 50px;
+  margin-left: 20px;
   padding: 200px;
-  width: 200px;
+  width: 50%;
+  text-align: center;
 }
 
 
