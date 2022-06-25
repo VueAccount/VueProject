@@ -8,14 +8,7 @@
     <!--1番上のツールバー-->
     <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Vuetifiy</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn text>一覧</v-btn>
-        <v-btn text>検索</v-btn>
-        <v-btn text>設定</v-btn>
-        <v-btn text>マイページ</v-btn>
-      </v-toolbar-items>
+      <v-toolbar-title>Vuetifiy(タイトル募集中)</v-toolbar-title>
     </v-app-bar>
 
     <!--メイン画面-->
