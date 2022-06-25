@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'ModalWind',
   props: ['val'],
@@ -23,6 +24,8 @@ export default {
       title: "これがモーダルウィンドウです。",
       data: ["りんご", "バナナ", "ぶどう"]
     }
+  },
+  components: {
   }
 }
 </script>

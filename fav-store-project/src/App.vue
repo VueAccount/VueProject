@@ -1,34 +1,41 @@
 <template>
-<body>
-  <div id="app">
-    <!--<Tab/>-->
-    <Tab/>
-  </div>
-</body>
-</template>
+  <v-app>
+    <v-navigation-drawer app v-model="drawer" clipped >
+      <v-container>
+      </v-container>
+    </v-navigation-drawer>
+    
+    <!--1番上のツールバー-->
+    <v-app-bar color="primary" dark app clipped-left>
+      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Vuetifiy(タイトル募集中)</v-toolbar-title>
+    </v-app-bar>
 
+    <!--メイン画面-->
+    <v-main>
+      <v-container>
+        <Tab/>
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
 <script>
 import Tab from './components/Tab.vue'
-
-import StoreList from './components/StoreList'
 
 export default {
   name: 'App',
   components: {
     Tab,
-    StoreList,
-    main
+  },
+  data() {
+    return{
+      drawer: null
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
 </style>
