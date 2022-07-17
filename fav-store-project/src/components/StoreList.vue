@@ -1,6 +1,7 @@
 <!---->
 <template>
-  <v-simple-table class="store-table">
+  <div class="store-table">
+  <v-simple-table>
      <thead>
         <tr>
           お店一覧
@@ -11,18 +12,29 @@
         v-for="store in stores"
         :key="store.Name"
       >
+        <div class="store-record">
         <tr>
-          <td>{{ store.Name }}</td>
+          <td>
+            <div class="store-name">
+              {{ store.Name }}
+            </div>
+            <div class="edit-btn">
+              <v-btn>編集</v-btn>
+            </div>
+          </td>
         </tr>
-        <tr>
+        </div>
+        <tr class="store-memo">
           <td>{{ store.Memo }}</td>
         </tr>
         <hr>
+        
       </tbody>
       <br>
     <button @click="test('202205081708')">データ取得ボタン</button><br>
     {{storesTest}}
   </v-simple-table>
+  </div>
 
 
 <!--
@@ -36,6 +48,9 @@
     <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
   </div>
   -->
+
+
+
 </template>
 
 <script>
@@ -109,16 +124,27 @@ export default Vue.extend ({
 
 <style>
 .store-table{
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
+  margin: 30px auto;
 }
 .store-table thead{
   text-align: center;
-  font-size: 15pt;
+  font-size: 20pt;
+  background-color: #00CED1;
+  color: #fff;
 }
-.store-table tbody{
-  height: 100px;
+.store-record{
+  height: 80px;
+  background-color: #AFEEEE; 
+}
+.store-name{
+  text-align: center;
+}
+.edit-btn{
+  font-size: 15pt;
+  text-align: right !important;
+}
+.store-memo{
+  background-color: #E0FFFF;
 }
 </style>
