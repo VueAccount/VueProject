@@ -62,8 +62,6 @@ export default {
   margin-bottom: 50px;
   padding:  20px 0px;
 }
-
-
 .item{
   display: block;
   overflow: hidden;

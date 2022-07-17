@@ -1,10 +1,5 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="drawer" clipped >
-      <v-container>
-      </v-container>
-    </v-navigation-drawer>
-    
     <!--1番上のツールバー-->
     <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
@@ -36,6 +31,4 @@ export default {
 </script>
 
 <style>
-
-
 </style>
