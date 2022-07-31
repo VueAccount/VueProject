@@ -2,13 +2,14 @@
   <div id="overlay">
     <div id="content">
       <v-card-title class="pa-1 pl-2 caption blue-grey lighten-1 grey--text text--lighten-3" >
-      <span>お店①</span>
+        <span>お店①</span>
       </v-card-title>
       <v-card-text class="pa-3 pt-2">
         <v-row dense>
           <v-col cols="6">
-            <v-text-field
+            <v-text-field 
               readonly
+              class="mx-3 my-3"
               label="店名"
               v-model="storesTest.Name"
               persistent-placeholder
@@ -17,6 +18,7 @@
           <v-col cols="6">
             <v-text-field
               readonly
+              class="mx-3 my-3"
               label="登録日"
               v-model="storesTest.RegistrationDate"
               persistent-placeholder
@@ -25,22 +27,25 @@
           <v-col cols="6">
             <v-text-field
             readonly
+            class="mx-3 my-3"
             label="営業時間"
             v-model="storesTest.OpeningHours"
             persistent-placeholder
             ></v-text-field>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="2">
             <v-text-field
             readonly
+            class="mx-3 my-3 centered-input"
             label="優先度"
             v-model="storesTest.Priority"
             persistent-placeholder
             ></v-text-field>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="2">
             <v-text-field
             readonly
+            class="mx-3 my-3 centered-input"
             label="評価"
             v-model="storesTest.Rate"
             persistent-placeholder
@@ -49,6 +54,7 @@
           <v-col cols="6">
             <v-text-field
             readonly
+            class="mx-3 my-3"
             label="URL"
             v-model="storesTest.URL"
             persistent-placeholder
@@ -135,11 +141,12 @@ export default Vue.extend ({
 #content{
   z-index:2;
   width:70%;
-  height: 70%;
+  height: 60%;
   padding-top: 0px;
   background:#fff;
   padding-bottom: 3em;
   text-align: center;
+  border-radius: 10px 10px 0px 0px;
 }
 .close {
   line-height: 20px;
@@ -154,7 +161,7 @@ export default Vue.extend ({
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+
   height: 40px;
   line-height: 20px;
   list-style: none;
@@ -169,11 +176,7 @@ export default Vue.extend ({
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
-.box{
-  padding: 10px;
-}
-.box.box_in{
-  padding: 10px;
+.centered-input input {
+  text-align: center
 }
 </style>

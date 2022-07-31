@@ -14,6 +14,7 @@
     </v-main>
   </v-app>
 </template>
+
 <script>
 import Tab from './components/Tab.vue'
 
