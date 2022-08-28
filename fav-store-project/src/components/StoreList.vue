@@ -1,25 +1,28 @@
 <!---->
 <template>
   <div class="store-list">
-  {{stores}}
+  {{ stores }}
     <ul>
-      <li v-for="store in stores" :key="store.storeName">
-      <button v-on:click="openModal(item)">店名： {{ store.Name }} 、メモ： {{ store.Memo }}</button>
+      <li v-for="(store, index) in stores" :key="store.storeName" class="test">
+        <td>ID： {{ store.RegisterId }}、 </td>
+        <td>店名： {{ store.Name }}、 </td>
+        <td>登録日： {{ store.RegistrationDate }}、</td>
+        <td>営業時間： {{ store.OpeningHours }}、</td>
+        <td>優先度： {{ store.Priority }}、</td>
+        <td>評価： {{ store.Rate }}、</td>
+        <v-btn @click="deleteStore(index)" v-if="relode">削除ボタン</v-btn>
       </li>
     </ul>
-    <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
   </div>
 </template>
 
 <script>
-import { getDatabase, ref, child, get } from 'firebase/database';
+import { getDatabase, ref, child, get, remove} from 'firebase/database';
 import Vue from 'vue';
-import ModalWind from './ModalWind.vue'
 
 export default Vue.extend ({
   name: 'StoreList',
   components: {
-    ModalWind
   },
 
   data() {
@@ -29,6 +32,7 @@ export default Vue.extend ({
       item: true,
       showContent: false,
       postItem: "",
+      relode: true,
     }
   },
   mounted() {
@@ -54,11 +58,21 @@ export default Vue.extend ({
     },
     closeModal () {
       this.showContent = false
-    }
+    },
+    deleteStore(index){
+      const db = getDatabase()
+      remove(ref(db, 'StoreList/' + index),{
+      });
+      this.relode = false;
+      this.$nextTick(() => (this.relode = true));
+    },
   }
 })
 </script>
 
 <style>
+.test{
+  margin-top: 30px;
+}
 
 </style>

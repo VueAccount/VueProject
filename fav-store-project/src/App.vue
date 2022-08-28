@@ -1,10 +1,5 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="drawer" clipped >
-      <v-container>
-      </v-container>
-    </v-navigation-drawer>
-    
     <!--1番上のツールバー-->
     <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
@@ -19,6 +14,7 @@
     </v-main>
   </v-app>
 </template>
+
 <script>
 import Tab from './components/Tab.vue'
 
@@ -36,6 +32,4 @@ export default {
 </script>
 
 <style>
-
-
 </style>

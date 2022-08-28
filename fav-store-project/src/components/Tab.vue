@@ -2,10 +2,16 @@
 <v-app>
 
       <v-tabs class="tab" color="white" background-color="cyan" centered dark>
+        <v-tab>新規登録</v-tab>
+        <v-tab-item>
+          <v-card>
+            <StoreRegister/>
+          </v-card>
+        </v-tab-item>
         <v-tab>一覧</v-tab>
         <v-tab-item>
-          <v-card >
-            <v-btn class="button" v-on:click="openModal(item)" >モダールテスト</v-btn>
+          <v-card>
+            <v-btn class="button" @click="openModal(item)" >モダールテスト</v-btn>
             <ModalWind :val="postItem" v-show="showContent" @close="closeModal"/>
           </v-card>
         </v-tab-item>
@@ -37,7 +43,7 @@ import Search from './StoreSearch.vue'
 import ModalWind from './ModalWind.vue'
 import EditScreen from './EditScreen.vue'
 import StoreList from './StoreList.vue'
-
+import StoreRegister from './StoreRegister.vue'
 
 export default {
     name: 'Tab-con',
@@ -46,12 +52,13 @@ export default {
       ModalWind,
       EditScreen,
       StoreList,
+      StoreRegister,
     },
     data(){
         return {
             activeTab: 1,
             showContent: false,
-            postItem: "",
+            postItem: null,
             item: true,
         }
     },
@@ -108,25 +115,6 @@ export default {
 .tab-body {
   padding: 20px;  
 }
-.tab1,
-.tab3,
-.tab4 {
-  padding: 12px;
-  color: #fff;
-  width: 800px;
-  margin-left: 25px;
-}
-.tab1 {
-  background: #1867c0;
-}
-.tab3 {
-  background: #ff5252;
-}
-.tab4 {
-  background: yellow;
-}
-.test {
-  border: solid;
-  margin-top: 50px;
-}
+
+
 </style>
