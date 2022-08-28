@@ -2,6 +2,12 @@
 <v-app>
 
       <v-tabs class="tab" color="white" background-color="cyan" centered dark>
+        <v-tab>新規登録</v-tab>
+        <v-tab-item>
+          <v-card>
+            <StoreRegister/>
+          </v-card>
+        </v-tab-item>
         <v-tab>一覧</v-tab>
         <v-tab-item>
           <v-card>
@@ -37,7 +43,7 @@ import Search from './StoreSearch.vue'
 import ModalWind from './ModalWind.vue'
 import EditScreen from './EditScreen.vue'
 import StoreList from './StoreList.vue'
-
+import StoreRegister from './StoreRegister.vue'
 
 export default {
     name: 'Tab-con',
@@ -46,6 +52,7 @@ export default {
       ModalWind,
       EditScreen,
       StoreList,
+      StoreRegister,
     },
     data(){
         return {

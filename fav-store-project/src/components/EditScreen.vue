@@ -3,37 +3,35 @@
     <div class="title">
       <h1>{{ title }}</h1>
     </div>
-
-    <!-- コンテンツエリア -->
-    <div class="item">
-      <label class="label" name="storeName">店名</label>
-      <input type="text" name="name" size="15 ">
-    </div>
-    <div class="item">
-      <label class="label" name="storeURL">URL</label>
-      <input type="text" name="name" size="15 ">
-    </div>
-    <div class="item">
-      <label class="label" name="storeName">優先度</label>
-      <input type="text" name="name" size="15 ">
-    </div>
-    <div class="item">
-      <label class="label" name="storeName">営業時間</label>
-      <input type="text" name="name" size="15 ">
+        <div class="item">
+      <label class="label">店名</label>
+      <input type="text" name="name" size="15" v-model="Name">
     </div>
     <div class="item">
       <label class="label" name="storeName">登録日</label>
-      <input type="text" name="name" size="15 ">
+      <input type="text" name="name" size="15" v-model="RegistrationDate">
+    </div>
+        <div class="item">
+      <label class="label" name="storeName">営業時間</label>
+      <input type="text" name="name" size="15" v-model="OpeningHours">
+    </div>
+    <div class="item">
+      <label class="label" name="storeName">優先度</label>s
     </div>
     <div class="item">
       <label class="label" name="storeName">評価</label>
-      <input type="text" name="name" size="15 ">
+      <input type="text" name="name" size="15" v-model="Rate">
+    </div>
+    <div class="item">
+      <label class="label" name="storeURL">URL</label>
+      <input type="text" name="name" size="15" v-model="URL">
     </div>
     <div class="item">
       <label class="label" for="storeMemo">メモ</label>
       <textarea rows="4" id="message" name="comment"></textarea>
     </div>
     <DeleteButton/>
+    <v-btn variant='primary' @click='register'> 登録</v-btn>
   </div>
 </template>
 

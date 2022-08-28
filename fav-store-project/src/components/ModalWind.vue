@@ -51,6 +51,15 @@
             persistent-placeholder
             ></v-text-field>
           </v-col>
+          <v-col cols="4">
+            <v-text-field
+            readonly
+            class="mx-3 my-3"
+            label="電話番号"
+            v-model="storesTest.Phonenumber"
+            persistent-placeholder
+            ></v-text-field>
+          </v-col>
           <v-col cols="6">
             <v-text-field
             readonly
@@ -62,7 +71,7 @@
           </v-col>
         </v-row>
       </v-card-text>
-      <v-btn @click="test('202205081708')">データ取得ボタン</v-btn>
+      <v-btn @click="test('-N8O1xwpknprXw6ddwsO')">データ取得ボタン</v-btn>
       <button class="button" @click="$emit('close')">Close</button>
     </div>
   </div>
@@ -87,7 +96,6 @@ export default Vue.extend ({
     }
   },
     mounted() {
-
     //接続
     const db = getDatabase()
     const dbRef = ref(db)
@@ -101,6 +109,8 @@ export default Vue.extend ({
     }
     }).catch((error) => {
       console.error(error)
+      // テーブルリセット
+      this.items = [];
       })
     },
     methods: {
@@ -108,6 +118,7 @@ export default Vue.extend ({
         console.log(storeNum);
         const db = getDatabase()
         const dbRef = ref(db)
+        
         get(child(dbRef,'StoreList/'+storeNum)).then((snapshot) => {
         if (snapshot.exists()) {
           this.storesTest = snapshot.val()
@@ -141,7 +152,7 @@ export default Vue.extend ({
 #content{
   z-index:2;
   width:70%;
-  height: 60%;
+  height: 450px;
   padding-top: 0px;
   background:#fff;
   padding-bottom: 3em;
